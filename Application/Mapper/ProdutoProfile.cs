@@ -1,0 +1,16 @@
+﻿using AutoMapper;
+using GestaoPedidos.Application.DTO.Produtos;
+using GestaoPedidos.Domain.Entities;
+
+namespace GestaoPedidos.Application.Mapper
+{
+    public class ProdutoProfile : Profile
+    {
+        public ProdutoProfile()
+        {
+            CreateMap<Produto, ProdutoCreateDTO>();
+            CreateMap<Produto, ProdutoResponseDTO>();  
+            CreateMap<Produto, ProdutoUpdateDTO>();
+        }
+    }
+}
