@@ -21,7 +21,7 @@ namespace GestaoPedidos.Application.UseCases.Clientes.Commands
         {
             var clienteExistente = await _clienteRepository.ObterPorCpf(dto.Cpf);
             if (clienteExistente != null)
-                throw new(ClientesExceptions.Cliente_CpfExistente);
+                throw new BadHttpRequestException(ClientesExceptions.Cliente_CpfExistente);
 
             var novoCliente = new Cliente(dto.Nome, dto.Email, dto.Cpf);
 

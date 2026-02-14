@@ -20,11 +20,11 @@ namespace GestaoPedidos.Application.UseCases.Clientes.Commands
         public async Task<ClienteResponseDTO> Execute(ClienteUpdateDTO dto)
         {
             var cliente = await _repository.ObterPorId(dto.Id)
-                ?? throw new(ClientesExceptions.Cliente_NaoEncontrado);
+                ?? throw new BadHttpRequestException(ClientesExceptions.Cliente_NaoEncontrado);
 
             var clienteComCpfExistente = await _repository.ObterPorCpf(dto.Cpf);
             if (clienteComCpfExistente != null && clienteComCpfExistente.Id != dto.Id)
-                throw new(ClientesExceptions.Cliente_CpfExistente);
+                throw new BadHttpRequestException(ClientesExceptions.Cliente_CpfExistente);
 
             cliente.Atualizar(dto.Nome, dto.Email, dto.Cpf);
 

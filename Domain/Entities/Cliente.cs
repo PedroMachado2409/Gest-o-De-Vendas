@@ -7,7 +7,7 @@
         public string Email { get; set; } = string.Empty;
         public string Cpf { get; set; }
         public bool Ativo { get; set; } = true;
-        public DateTime DataCadstro { get; set; } = DateTime.UtcNow;
+        public DateTime DataCadastro { get; set; } = DateTime.UtcNow;
 
         protected Cliente() { }
         public Cliente (string nome, string email, string cpf)

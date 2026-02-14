@@ -17,10 +17,10 @@ namespace GestaoPedidos.Application.UseCases.Clientes.Commands
         public async Task<bool> Execute(int id)
         {
             var cliente = await _repository.ObterPorId(id)
-                ?? throw new(ClientesExceptions.Cliente_NaoEncontrado);
+                ?? throw new BadHttpRequestException(ClientesExceptions.Cliente_NaoEncontrado);
 
             if (cliente.Ativo == true)
-                throw new(ClientesExceptions.Cliente_JaAtivo);
+                throw new BadHttpRequestException(ClientesExceptions.Cliente_JaAtivo);
 
             cliente.Ativar();
             await _repository.Atualizar(cliente);

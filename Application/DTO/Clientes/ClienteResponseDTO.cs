@@ -7,6 +7,6 @@
         public string Email { get; set; }
         public string Cpf { get; set; }
         public bool Ativo { get; set; }
-        public DateTime DataCadstro { get; set; }
+        public DateTime DataCadastro { get; set; }
     }
 }
