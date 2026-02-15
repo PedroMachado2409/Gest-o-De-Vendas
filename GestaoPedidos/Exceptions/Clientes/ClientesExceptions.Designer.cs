@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NexusGym.Exceptions.Clientes {
+namespace GestaoPedidos.Exceptions.Clientes {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace NexusGym.Exceptions.Clientes {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NexusGym.Exceptions.Clientes.ClientesExceptions", typeof(ClientesExceptions).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GestaoPedidos.Exceptions.Clientes.ClientesExceptions", typeof(ClientesExceptions).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -93,6 +93,15 @@ namespace NexusGym.Exceptions.Clientes {
         public static string Cliente_CpfObrigatorio {
             get {
                 return ResourceManager.GetString("Cliente_CpfObrigatorio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a O Email informado ja esta cadastrado, escolha outro !.
+        /// </summary>
+        public static string Cliente_EmailExistente {
+            get {
+                return ResourceManager.GetString("Cliente_EmailExistente", resourceCulture);
             }
         }
         

@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using GestaoPedidos.Application.DTO;
+using GestaoPedidos.Application.DTO.Clientes;
 using GestaoPedidos.Domain.Abstractions;
-using NexusGym.Exceptions.Clientes;
+using GestaoPedidos.Exceptions.Clientes;
 
 namespace GestaoPedidos.Application.UseCases.Clientes.Queries
 {

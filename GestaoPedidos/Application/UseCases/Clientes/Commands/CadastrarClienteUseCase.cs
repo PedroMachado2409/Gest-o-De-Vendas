@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using GestaoPedidos.Application.DTO;
+using GestaoPedidos.Application.DTO.Clientes;
 using GestaoPedidos.Domain.Abstractions;
 using GestaoPedidos.Domain.Entities;
-using NexusGym.Exceptions.Clientes;
+using GestaoPedidos.Exceptions.Clientes;
 
 namespace GestaoPedidos.Application.UseCases.Clientes.Commands
 {
@@ -21,7 +21,11 @@ namespace GestaoPedidos.Application.UseCases.Clientes.Commands
         {
             var clienteExistente = await _clienteRepository.ObterPorCpf(dto.Cpf);
             if (clienteExistente != null)
-                throw new(ClientesExceptions.Cliente_CpfExistente);
+                throw new BadHttpRequestException(ClientesExceptions.Cliente_CpfExistente);
+            
+            var emailExistente = await _clienteRepository.ObterPorEmail(dto.Email);
+            if (emailExistente != null)
+                throw new BadHttpRequestException(ClientesExceptions.Cliente_EmailExistente);
 
             var novoCliente = new Cliente(dto.Nome, dto.Email, dto.Cpf);
 

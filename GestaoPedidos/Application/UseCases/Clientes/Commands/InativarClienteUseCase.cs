@@ -1,5 +1,5 @@
 ﻿using GestaoPedidos.Domain.Abstractions;
-using NexusGym.Exceptions.Clientes;
+using GestaoPedidos.Exceptions.Clientes;
 
 namespace GestaoPedidos.Application.UseCases.Clientes.Commands
 {
@@ -16,10 +16,10 @@ namespace GestaoPedidos.Application.UseCases.Clientes.Commands
         public async Task<bool> Execute(int id)
         {
             var cliente = await _repository.ObterPorId(id)
-                ?? throw new(ClientesExceptions.Cliente_NaoEncontrado);
+                ?? throw new BadHttpRequestException(ClientesExceptions.Cliente_NaoEncontrado);
 
             if (cliente.Ativo == false)
-                throw new(ClientesExceptions.Cliente_JaInativo);
+                throw new BadHttpRequestException(ClientesExceptions.Cliente_JaInativo);
 
             cliente.Inativar();
             await _repository.Atualizar(cliente);

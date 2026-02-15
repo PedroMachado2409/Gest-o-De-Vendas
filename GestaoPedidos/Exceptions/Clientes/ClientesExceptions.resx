@@ -156,4 +156,7 @@
   <data name="Cliente_JaInativo" xml:space="preserve">
     <value>O cliente ja está inativo</value>
   </data>
+  <data name="Cliente_EmailExistente" xml:space="preserve">
+    <value>O Email informado ja esta cadastrado, escolha outro !</value>
+  </data>
 </root>

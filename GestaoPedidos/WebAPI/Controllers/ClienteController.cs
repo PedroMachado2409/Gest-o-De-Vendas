@@ -1,4 +1,4 @@
-﻿using GestaoPedidos.Application.DTO;
+﻿using GestaoPedidos.Application.DTO.Clientes;
 using GestaoPedidos.Application.UseCases.Clientes.Commands;
 using GestaoPedidos.Application.UseCases.Clientes.Queries;
 using Microsoft.AspNetCore.Mvc;

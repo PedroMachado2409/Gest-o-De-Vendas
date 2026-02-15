@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using GestaoPedidos.Application.DTO;
+using GestaoPedidos.Application.DTO.Clientes;
 using GestaoPedidos.Domain.Entities;
 
 namespace GestaoPedidos.Application.Mapper
