@@ -4,7 +4,7 @@ using GestaoPedidos.Application.DTO.Clientes;
 using GestaoPedidos.Application.UseCases.Clientes.Commands;
 using GestaoPedidos.Domain.Abstractions;
 using GestaoPedidos.Domain.Entities;
-using GestaoPedidos.Exceptions.Clientes;
+using GestaoPedidos.Domain.Exceptions.Clientes;
 using Microsoft.AspNetCore.Http;
 using Moq;
 
@@ -66,7 +66,6 @@ namespace GestaoPedidosTests.Application.UseCases.Clientes.Commands
                         c.Cpf == dto.Cpf
                     )
                 ), Times.Once());
-
         }
 
         [TestMethod]

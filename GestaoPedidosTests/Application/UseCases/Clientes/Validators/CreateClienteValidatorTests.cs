@@ -5,7 +5,7 @@ using GestaoPedidos.Application.UseCases.Clientes.Commands;
 using GestaoPedidos.Application.Validators.Clientes;
 using GestaoPedidos.Domain.Abstractions;
 using GestaoPedidos.Domain.Entities;
-using GestaoPedidos.Exceptions.Clientes;
+using GestaoPedidos.Domain.Exceptions.Clientes;
 using Moq;
 
 namespace GestaoPedidosTests.Application.UseCases.Clientes.Validators

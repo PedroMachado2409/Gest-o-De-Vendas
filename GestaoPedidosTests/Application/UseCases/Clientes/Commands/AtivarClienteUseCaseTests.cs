@@ -2,7 +2,7 @@
 using GestaoPedidos.Application.UseCases.Clientes.Commands;
 using GestaoPedidos.Domain.Abstractions;
 using GestaoPedidos.Domain.Entities;
-using GestaoPedidos.Exceptions.Clientes;
+using GestaoPedidos.Domain.Exceptions.Clientes;
 using Microsoft.AspNetCore.Http;
 using Moq;
 

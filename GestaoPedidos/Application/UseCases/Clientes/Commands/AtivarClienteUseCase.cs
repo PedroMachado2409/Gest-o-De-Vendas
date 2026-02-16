@@ -1,5 +1,6 @@
 ﻿using GestaoPedidos.Domain.Abstractions;
-using GestaoPedidos.Exceptions.Clientes;
+using GestaoPedidos.Domain.Exceptions.Clientes;
+
 
 
 namespace GestaoPedidos.Application.UseCases.Clientes.Commands

@@ -2,7 +2,7 @@
 using GestaoPedidos.Application.DTO.Clientes;
 using GestaoPedidos.Domain.Abstractions;
 using GestaoPedidos.Domain.Entities;
-using GestaoPedidos.Exceptions.Clientes;
+using GestaoPedidos.Domain.Exceptions.Clientes;
 
 namespace GestaoPedidos.Application.UseCases.Clientes.Commands
 {

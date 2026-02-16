@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GestaoPedidos.Exceptions.Produtos {
+namespace GestaoPedidos.Domain.Exceptions.Produtos {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace GestaoPedidos.Exceptions.Produtos {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GestaoPedidos.Exceptions.Produtos.ProdutoExceptions", typeof(ProdutoExceptions).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GestaoPedidos.Domain.Exceptions.Produtos.ProdutoExceptions", typeof(ProdutoExceptions).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

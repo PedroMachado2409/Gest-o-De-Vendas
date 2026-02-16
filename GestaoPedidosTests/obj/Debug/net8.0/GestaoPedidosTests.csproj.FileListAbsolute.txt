@@ -143,3 +143,11 @@ C:\Users\celso\source\repos\Pedidos\GestaoPedidosTests\obj\Debug\net8.0\refint\G
 C:\Users\celso\source\repos\Pedidos\GestaoPedidosTests\obj\Debug\net8.0\GestaoPedidosTests.pdb
 C:\Users\celso\source\repos\Pedidos\GestaoPedidosTests\obj\Debug\net8.0\GestaoPedidosTests.genruntimeconfig.cache
 C:\Users\celso\source\repos\Pedidos\GestaoPedidosTests\obj\Debug\net8.0\ref\GestaoPedidosTests.dll
+C:\Users\celso\source\repos\Pedidos\GestaoPedidosTests\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\celso\source\repos\Pedidos\GestaoPedidosTests\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\celso\source\repos\Pedidos\GestaoPedidosTests\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\celso\source\repos\Pedidos\GestaoPedidosTests\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\celso\source\repos\Pedidos\GestaoPedidosTests\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\celso\source\repos\Pedidos\GestaoPedidosTests\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\celso\source\repos\Pedidos\GestaoPedidosTests\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\celso\source\repos\Pedidos\GestaoPedidosTests\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

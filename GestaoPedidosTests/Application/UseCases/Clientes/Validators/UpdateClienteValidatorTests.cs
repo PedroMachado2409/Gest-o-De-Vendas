@@ -4,7 +4,7 @@ using GestaoPedidos.Application.DTO.Clientes;
 using GestaoPedidos.Application.Validators.Clientes;
 using GestaoPedidos.Domain.Abstractions;
 using GestaoPedidos.Domain.Entities;
-using GestaoPedidos.Exceptions.Clientes;
+using GestaoPedidos.Domain.Exceptions.Clientes;
 using Moq;
 using System;
 using System.Collections.Generic;

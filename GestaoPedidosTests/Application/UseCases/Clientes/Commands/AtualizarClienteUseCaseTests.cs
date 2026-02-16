@@ -4,7 +4,7 @@ using GestaoPedidos.Application.DTO.Clientes;
 using GestaoPedidos.Application.UseCases.Clientes.Commands;
 using GestaoPedidos.Domain.Abstractions;
 using GestaoPedidos.Domain.Entities;
-using GestaoPedidos.Exceptions.Clientes;
+using GestaoPedidos.Domain.Exceptions.Clientes;
 using Microsoft.AspNetCore.Http;
 using Moq;
 using System;
@@ -126,7 +126,6 @@ namespace GestaoPedidosTests.Application.UseCases.Clientes.Commands
             _repositoryMock.Verify(r => r.ObterPorCpf(dto.Cpf), Times.Once());
             _repositoryMock.Verify(r => r.ObterPorEmail(dto.Email), Times.Once());
             _repositoryMock.Verify(r => r.Atualizar(clienteEditado), Times.Never());
-
 
         }
     }

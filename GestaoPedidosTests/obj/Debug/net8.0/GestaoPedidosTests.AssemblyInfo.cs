@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GestaoPedidosTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+75764e7e86cf7a78a5aab380d607694bec0ca640")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aab2aba40754104bfaf17accc7ce1998cf9609b7")]
 [assembly: System.Reflection.AssemblyProductAttribute("GestaoPedidosTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GestaoPedidosTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
