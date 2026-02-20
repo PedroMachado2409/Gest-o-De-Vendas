@@ -1,4 +1,6 @@
-﻿using FluentAssertions;
+﻿
+
+using FluentAssertions;
 using GestaoPedidos.Application.UseCases.Produtos.Commands;
 using GestaoPedidos.Domain.Abstractions;
 using GestaoPedidos.Domain.Entities;
@@ -6,65 +8,61 @@ using GestaoPedidos.Domain.Exceptions.Produtos;
 using Microsoft.AspNetCore.Http;
 using Moq;
 
-
 namespace GestaoPedidosTests.Application.UseCases.Produtos.Commands
 {
     [TestClass]
-    public class AtivarProdutoUseCaseTests
+    public class InativarProdutoUseCaseTests
     {
         private Mock<IProdutoRepository> _repositoryMock;
-        private AtivarProdutoUseCase _useCase;
-
+        private InativarProdutoUseCase _useCase;
 
         [TestInitialize]
         public void Setup()
         {
             _repositoryMock = new Mock<IProdutoRepository>();
-            _useCase = new AtivarProdutoUseCase(_repositoryMock.Object);
+            _useCase = new InativarProdutoUseCase(_repositoryMock.Object);
         }
 
         [TestMethod]
-        public async Task Deve_Ativar_Produto_Quanto_Esta_Inativo()
+        public async Task Deve_Inativar_Produto_Quando_Esta_Ativo()
+        {
+            var produto = new Produto("Produto Teste", "Marca Teste", 10, 15);
+            _repositoryMock.Setup(r => r.ObterPorId(It.IsAny<int>())).ReturnsAsync(produto);
+            var result = await _useCase.Executar(1);
+            result.Should().BeTrue();
+            produto.Ativo.Should().BeFalse();
+
+            _repositoryMock.Verify(r => r.ObterPorId(1), Times.Once());
+            _repositoryMock.Verify(r => r.Atualizar(produto), Times.Once());
+        }
+
+        [TestMethod]
+        public async Task Deve_Lancar_Execao_Quando_Estiver_Inativo()
         {
             var produto = new Produto("Produto Teste", "Marca Teste", 10, 15);
             produto.Inativar();
-
-            _repositoryMock.Setup(r => r.ObterPorId(It.IsAny<int>())).ReturnsAsync(produto);
-            var resultado = await _useCase.Executar(1);
-            resultado.Should().BeTrue();
-            produto.Ativo.Should().BeTrue();
-
-            _repositoryMock.Verify(r => r.ObterPorId(1), Times.Once());
-            _repositoryMock.Verify(r => r.Atualizar(produto), Times.Once);
-
-        }
-
-        [TestMethod]
-        public async Task Deve_Lancar_Excecao_Quando_Ja_Estiver_Ativo()
-        {
-            var produto = new Produto("Produto Teste", "Marca Teste", 10, 15);
             _repositoryMock.Setup(r => r.ObterPorId(It.IsAny<int>())).ReturnsAsync(produto);
             Func<Task> act = () => _useCase.Executar(1);
             var exception = await act.Should().ThrowAsync<BadHttpRequestException>();
-            exception.Which.Message.Should().Be(ProdutoExceptions.Produto_jaAtivo);
+            exception.Which.Message.Should().Be(ProdutoExceptions.Produto_JaInativo);
 
             _repositoryMock.Verify(r => r.ObterPorId(1), Times.Once());
             _repositoryMock.Verify(r => r.Atualizar(produto), Times.Never());
         }
 
         [TestMethod]
-        public async Task Deve_Lancar_Excecao_Quando_Nao_Localizar_O_Produto()
+        public async Task Deve_Lancar_Execao_Quando_Nao_Achar_O_Produto()
         {
             var produto = new Produto("Produto Teste", "Marca Teste", 10, 15);
-            _repositoryMock.Setup(r => r.ObterPorId(It.IsAny<int>())).ReturnsAsync((Produto?)null);
+            produto.Inativar();
+            _repositoryMock.Setup(r => r.ObterPorId(It.IsAny<int>())).ReturnsAsync((Produto?) null);
             Func<Task> act = () => _useCase.Executar(1);
             var exception = await act.Should().ThrowAsync<BadHttpRequestException>();
             exception.Which.Message.Should().Be(ProdutoExceptions.Produto_NaoEncontrado);
 
             _repositoryMock.Verify(r => r.ObterPorId(1), Times.Once());
-            _repositoryMock.Verify(r => r.Cadastrar(produto), Times.Never());
+            _repositoryMock.Verify(r => r.Atualizar(produto), Times.Never());
         }
-
 
     }
 }

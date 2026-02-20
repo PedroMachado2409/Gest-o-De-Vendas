@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using FluentAssertions;
 using GestaoPedidos.Application.DTO.Clientes;
-using GestaoPedidos.Application.UseCases.Clientes.Commands;
 using GestaoPedidos.Application.Validators.Clientes;
 using GestaoPedidos.Domain.Abstractions;
 using GestaoPedidos.Domain.Entities;

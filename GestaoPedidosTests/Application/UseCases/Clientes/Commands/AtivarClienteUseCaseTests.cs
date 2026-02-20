@@ -20,7 +20,7 @@ namespace GestaoPedidosTests.Application.UseCases.Clientes.Commands
         {
             _repositoryMock = new Mock<IClienteRepository>();
             _useCase = new AtivarClienteUseCase(_repositoryMock.Object);
-        }
+        }   
 
         [TestMethod]
         public async Task Deve_Ativar_Cliente_Quando_Esta_Inativo()
