@@ -44,7 +44,7 @@ namespace GestaoPedidosTests.Application.UseCases.Clientes.Commands
         }
 
         [TestMethod]
-        public async Task Deve_Lancar_Excecao_Quando_Esta_Ativo()
+        public async Task Deve_Lncar_Excecao_Quando_Esta_Ativo()
         {
             var cliente = new Cliente(
 

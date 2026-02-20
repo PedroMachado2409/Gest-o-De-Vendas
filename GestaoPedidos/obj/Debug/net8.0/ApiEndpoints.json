@@ -233,6 +233,22 @@
   },
   {
     "ContainingType": "GestaoPedidos.WebAPI.Controllers.UsuarioController",
+    "Method": "AtualizarUsuario",
+    "RelativePath": "api/Usuario/AtualizarUsuario",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "GestaoPedidos.Application.DTO.Usuarios.UsuarioUpdateDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestaoPedidos.WebAPI.Controllers.UsuarioController",
     "Method": "ObterAutenticado",
     "RelativePath": "api/Usuario/Autenticado",
     "HttpMethod": "GET",

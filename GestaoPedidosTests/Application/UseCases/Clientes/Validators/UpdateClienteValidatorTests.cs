@@ -6,12 +6,7 @@ using GestaoPedidos.Domain.Abstractions;
 using GestaoPedidos.Domain.Entities;
 using GestaoPedidos.Domain.Exceptions.Clientes;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace GestaoPedidosTests.Application.UseCases.Clientes.Validators
 {

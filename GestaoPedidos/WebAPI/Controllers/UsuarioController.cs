@@ -17,6 +17,7 @@ namespace GestaoPedidos.WebAPI.Controllers
         private readonly InativarUsuarioUseCase _inativarUsuarioUseCase;
         private readonly AtualizarSenhaUseCase _atualizarSenhaUseCase;
         private readonly ObterUsuarioAutenticadoUseCase _obterUsuarioAutenticadoUseCase;
+        private readonly AtualizarUsuarioUseCase _atualizarUsuarioUseCase;
 
         public UsuarioController (
             RegistrarUsuarioUseCase registrarUsuarioUseCase,
@@ -25,7 +26,8 @@ namespace GestaoPedidos.WebAPI.Controllers
             AtivarUsuarioUseCase ativarUsuarioUseCase,
             InativarUsuarioUseCase inativarUsuarioUseCase,
             AtualizarSenhaUseCase atualizarSenhaUseCase,
-            ObterUsuarioAutenticadoUseCase obterUsuarioAutenticadoUseCase)
+            ObterUsuarioAutenticadoUseCase obterUsuarioAutenticadoUseCase,
+            AtualizarUsuarioUseCase atualizarUsuarioUseCase)
         {
             _registrarUsuarioUseCase = registrarUsuarioUseCase;
             _autenticarUseCase = autenticarUseCase;
@@ -34,6 +36,7 @@ namespace GestaoPedidos.WebAPI.Controllers
             _inativarUsuarioUseCase = inativarUsuarioUseCase;
             _atualizarSenhaUseCase = atualizarSenhaUseCase;
             _obterUsuarioAutenticadoUseCase = obterUsuarioAutenticadoUseCase;
+            _atualizarUsuarioUseCase = atualizarUsuarioUseCase;
         }
 
         [HttpGet]
@@ -70,6 +73,14 @@ namespace GestaoPedidos.WebAPI.Controllers
         public async Task<IActionResult> AtualizarSenha([FromBody] UsuarioUpdateSenhaDTO dto)
         {
             var usuario = await _atualizarSenhaUseCase.Executar(dto);
+            return Ok(usuario);
+        }
+
+        [Authorize]
+        [HttpPut("AtualizarUsuario")]
+        public async Task<IActionResult> AtualizarUsuario([FromBody] UsuarioUpdateDTO dto)
+        {
+            var usuario = await _atualizarUsuarioUseCase.Executar(dto);
             return Ok(usuario);
         }
 

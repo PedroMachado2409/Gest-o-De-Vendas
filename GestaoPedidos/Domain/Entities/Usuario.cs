@@ -21,11 +21,10 @@ namespace GestaoPedidos.Domain.Entities
             Role = userRole;
         }
 
-        public void Atualizar(string nome, string email, string senha, UserRole userRole)
+        public void Atualizar(string nome, string email, UserRole userRole)
         {
             Nome = nome;
             Email = email;
-            Senha = senha;
             Role = userRole;
         }
 
